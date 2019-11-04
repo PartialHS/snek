@@ -6,5 +6,13 @@ contain a string with just a space in it.
 @return a 2d array of y length of x length items all with spaces inside
 */
 function makeMap(xVal, yVal){
-  
+ var retArray = [];
+  for (var i =0;i < yVal; i++){
+   var line = [];
+    for (var j =0;i < xVal; j++){
+   line.push("");
+  }
+  retArray.push(line);
+ }
+return retArray;
 }

@@ -10,7 +10,7 @@ function makeMap(xVal, yVal){
   for (var i =0;i < yVal; i++){
    var line = [];
     for (var j =0;i < xVal; j++){
-   line.push("");
+   line.push(" ");
   }
   retArray.push(line);
  }

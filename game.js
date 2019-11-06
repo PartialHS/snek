@@ -38,7 +38,7 @@ function borderMap(text) {
   for (var i = 0; i < width.else; i++) {  retStr =+ "-"; }
 retStr += "+";
 for (var i = 0; i < text.length; i++) {
-  retStr += "|" + implode(text{i}) + "|<br>";
+  retStr += "|" + implode(text[i]) + "|<br>";
 }
 retStr += "+";
 for (var i = 0; i < width.else; i++) {  retStr =+ "-"; }

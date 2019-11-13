@@ -152,3 +152,32 @@ function placeSnake(map){
   snake[1] = neighborCoord(snake[0], width, height);
   return snake;
 }
+
+/* moveSnake(snake, dir, food=false)
+takes a snake array and adds a new item to the front of it in direction dir. (n, s, e w)
+removes last item from the snake array as well, if food is equal to false
+does the remove before the addition
+@param snake {array} an array represeting a snake
+@param dir {string} the string "w", "a", "s", or "d"
+@param food {bool} if there is a food
+@return the new location for the snake
+*/
+function moveSnake(snake, dir, food=false){
+
+if (dir == "w"){
+  snake.unshift({x:snake[0].x, y: snake[0].y-1})
+}
+if (dir == "s"){
+  snake.unshift({x:snake[0].x , y: snake[0].y +1})
+}
+if (dir == "a"){
+    snake.unshift({x:snake[0].x -1, y: snake[0].y})
+}
+if (dir == "d"){
+      snake.unshift({x:snake[0].x +1, y: snake[0].y})
+}
+if (!food){
+  snake.pop();
+ }
+ return snake;
+}

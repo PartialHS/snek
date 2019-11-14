@@ -4,6 +4,7 @@ const width = 30;
 
 var snake = [];
 var food = null;
+var alive = true;
 //Test code
 var map = makeMap(width, length);
 snake = placeSnake(map);
@@ -27,26 +28,38 @@ document.addEventListener('keydown',function(event) {
 });
 document.addEventListener('keyup',function(event) {
 
-  if(event.key =='w' ){
+  if(event.key =='w' && alive){
     document.getElementById("wKey").style.backgroundColor = "#ffdb58";
+  if (typeof food === "boolean") {
+    console.log("YOU DIE");
+  }
   food = updateMap(snake, "w", food, width, length)
   var score = snake.length -2;
   document.getElementById("score").innerHTML = "score =" + score;
 }
-  if(event.key =='s'){
+  if(event.key =='s' && alive){
     document.getElementById("sKey").style.backgroundColor = "#ffdb58";
+    if (typeof food === "boolean") {
+      console.log("YOU DIE");
+    }
     food =updateMap(snake, "s", food, width, length);
     var score = snake.length -2;
     document.getElementById("score").innerHTML = "score =" + score;
   }
-  if(event.key =='a'){
+  if(event.key =='a' && alive){
     document.getElementById("aKey").style.backgroundColor = "#ffdb58";
+    if (typeof food === "boolean") {
+      console.log("YOU DIE");
+    }
     food = updateMap(snake, "a", food, width, length);
     var score = snake.length -2;
     document.getElementById("score").innerHTML = "score =" + score;
   }
-    if(event.key =='d'){
+    if(event.key =='d' && alive){
     document.getElementById("dKey").style.backgroundColor = "#ffdb58";
+    if (typeof food === "boolean") {
+      console.log("YOU DIE");
+    }
     food = updateMap(snake, "d", food, width, length);
     var score = snake.length -2;
 
